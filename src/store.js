@@ -1,7 +1,8 @@
-import configureStore from "@reduxjs/toolkit";
-import rootReducer from "./reducers/rootReducer";
+import {configureStore} from "@reduxjs/toolkit";
+import postReducer from "./reducers/post.js";
 export const store = configureStore({
   reducer: {
-    rootReducer:rootReducer
+    posts:postReducer,
   },
-})
+  devtools: process.env.NODE_ENV !== "production",
+});
